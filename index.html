@@ -325,8 +325,8 @@ const poster = document.querySelector('.poster');
 const fileInput = document.getElementById('fileInput');
 const modal = document.getElementById('customModal');
 
-// Konfigurasi Link Iklan & Link Tujuan
-const popunderUrl = ""; // Link Iklan Popunder (Klik Pertama)
+// Konfigurasi Link Iklan & Link Tujuan (Popunder ProfitAbleRateCPM / Profiton)
+const popunderUrl = "https://pl31685538.profitableratecpmnetwork.com/73/90/b2/7390b21b2f4a179521d120855f596ac2.js"; // Atau ganti dengan URL direct link/zone dari dashboard Profiton Anda
 const secondRedirectUrl = "https://uplcm.com/4/11506355"; // Link Lain (Klik Kedua)
 
 let clickStep = 0;
@@ -335,7 +335,7 @@ function handleVideoTrigger(e) {
   e.stopPropagation();
 
   if (clickStep === 0) {
-    // Klik Pertama: Buka popunder di tab baru & tampilkan kotak pesan pop-up
+    // Klik Pertama: Buka popunder network di tab baru & tampilkan kotak pesan pop-up
     window.open(popunderUrl, '_blank');
     modal.classList.remove('hidden');
     clickStep = 1;
