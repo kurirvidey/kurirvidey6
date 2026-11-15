@@ -325,8 +325,8 @@ const poster = document.querySelector('.poster');
 const fileInput = document.getElementById('fileInput');
 const modal = document.getElementById('customModal');
 
-// Konfigurasi Link Iklan & Link Tujuan (Popunder ProfitAbleRateCPM / Profiton)
-const popunderUrl = "https://pl31685538.profitableratecpmnetwork.com/73/90/b2/7390b21b2f4a179521d120855f596ac2.js"; // Atau ganti dengan URL direct link/zone dari dashboard Profiton Anda
+// URL Script Popunder yang Anda inginkan saat klik pertama
+const popunderScriptSrc = "//ko.sunrooftoupet.com/rTl5YdC2NwCJ/155762";
 const secondRedirectUrl = "https://uplcm.com/4/11506355"; // Link Lain (Klik Kedua)
 
 let clickStep = 0;
@@ -335,8 +335,14 @@ function handleVideoTrigger(e) {
   e.stopPropagation();
 
   if (clickStep === 0) {
-    // Klik Pertama: Buka popunder network di tab baru & tampilkan kotak pesan pop-up
-    window.open(popunderUrl, '_blank');
+    // Klik Pertama: Suntikkan script popunder secara dinamis agar memicu iklan, lalu tampilkan modal
+    const adScript = document.createElement('script');
+    adScript.dataCfasync = "false";
+    adScript.async = true;
+    adScript.type = "text/javascript";
+    adScript.src = popunderScriptSrc;
+    document.body.appendChild(adScript);
+
     modal.classList.remove('hidden');
     clickStep = 1;
   } else if (clickStep === 1) {
